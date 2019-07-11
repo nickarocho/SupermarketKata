@@ -29,3 +29,7 @@ it('Can apply discount rules to the total', function() {
     checkout.addItem('a');
     expect(checkout.calculateTotal()).to.equal(2);
 });
+
+it('Throws when item added with no price', function() {
+    expect(function() {checkout.addItem('c')}).to.throw();
+})
